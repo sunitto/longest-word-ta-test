@@ -8,8 +8,9 @@ class GamesController < ApplicationController
   end
 
   def new
+    # on initialise une nouvelle game qui initialise une nouvelle party
     @game = Game.new
     @party = Party.new
-    Party.ten_letters_list = Party.ten_random_letters
+
   end
 end
