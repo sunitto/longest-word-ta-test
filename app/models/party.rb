@@ -1,8 +1,9 @@
 class Party < ApplicationRecord
   belongs_to :game
   has_many :solutions
-   #validates format to match the :ten_letters_word using Regex.escape
-  validates :word, presence: true, length: { minimum: 1, maximum: 10 }, format: { with: /\A[#{Regexp.escape(ten_letters_list)}]+\z/ }
+  validates :word, presence: true, length: { minimum: 1, maximum: 10 }
+   #syntax de validates pour que word corresponde à ten_letters_word en utilisant Regex.escape
+  # format: { with: /\A[#{Regexp.escape(ten_letters_list)}]+\z/ } ne fonctionne pas. Commenté pour le moment.
 
   def ten_letters_list
     vowels = %w[a e i o u]
